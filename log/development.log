@@ -1,0 +1,195 @@
+# Logfile created on Mon May 04 16:33:12 -0600 2009SQL (1.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.3ms)  SELECT version FROM schema_migrations
+SQL (0.1ms)  select sqlite_version(*)
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (4.0ms)  CREATE TABLE "faces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" integer, "roll_id" integer, "position" integer, "created_at" datetime, "updated_at" datetime) 
+SQL (0.1ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.4ms)  CREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "name" varchar(255), "game_id" integer, "score" integer DEFAULT 0, "strategy" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  CREATE TABLE "rolls" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "score" integer DEFAULT 0 NOT NULL, "accumulated_score" integer DEFAULT 0 NOT NULL, "unused" integer DEFAULT 0 NOT NULL, "action_name" varchar(255), "turn_id" integer, "position" integer, "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "turns" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "player_id" integer, "position" integer, "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (2.4ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.1ms)  SELECT version FROM "schema_migrations"
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090501194952')
+SQL (3.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090417195107')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090417195145')
+SQL (2.9ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090428151959')
+SQL (2.9ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090501194826')
+SQL (0.8ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  SELECT version FROM schema_migrations
+SQL (0.1ms)  select sqlite_version(*)
+SQL (0.1ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (4.1ms)  CREATE TABLE "faces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" integer, "roll_id" integer, "position" integer, "created_at" datetime, "updated_at" datetime) 
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "name" varchar(255), "game_id" integer, "score" integer DEFAULT 0, "strategy" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.7ms)  CREATE TABLE "rolls" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "score" integer DEFAULT 0 NOT NULL, "accumulated_score" integer DEFAULT 0 NOT NULL, "unused" integer DEFAULT 0 NOT NULL, "action_name" varchar(255), "turn_id" integer, "position" integer, "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "turns" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "player_id" integer, "position" integer, "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (1.8ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.1ms)  SELECT version FROM "schema_migrations"
+SQL (2.0ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090501194952')
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090417195107')
+SQL (2.0ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090417195145')
+SQL (1.9ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090428151959')
+SQL (2.2ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090501194826')
+SQL (0.8ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  SELECT version FROM schema_migrations
+SQL (0.1ms)  select sqlite_version(*)
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (4.6ms)  CREATE TABLE "faces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" integer, "roll_id" integer, "position" integer, "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  CREATE TABLE "games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.4ms)  CREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "name" varchar(255), "game_id" integer, "score" integer DEFAULT 0, "strategy" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  CREATE TABLE "rolls" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "score" integer DEFAULT 0 NOT NULL, "accumulated_score" integer DEFAULT 0 NOT NULL, "unused" integer DEFAULT 0 NOT NULL, "action_name" varchar(255), "turn_id" integer, "position" integer, "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.5ms)  CREATE TABLE "turns" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "player_id" integer, "position" integer, "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (2.4ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.1ms)  SELECT version FROM "schema_migrations"
+SQL (2.1ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090501194952')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090417195107')
+SQL (2.1ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090417195145')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090428151959')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090501194826')
+SQL (0.9ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  SELECT version FROM schema_migrations
+SQL (0.1ms)  select sqlite_version(*)
+SQL (0.1ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (4.3ms)  CREATE TABLE "faces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" integer, "roll_id" integer, "position" integer, "created_at" datetime, "updated_at" datetime) 
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.8ms)  CREATE TABLE "games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  CREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "name" varchar(255), "game_id" integer, "score" integer DEFAULT 0, "strategy" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.9ms)  CREATE TABLE "rolls" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "score" integer DEFAULT 0 NOT NULL, "accumulated_score" integer DEFAULT 0 NOT NULL, "unused" integer DEFAULT 0 NOT NULL, "action_name" varchar(255), "turn_id" integer, "position" integer, "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.6ms)  CREATE TABLE "turns" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "player_id" integer, "position" integer, "created_at" datetime, "updated_at" datetime) 
+SQL (0.7ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (2.3ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.1ms)  SELECT version FROM "schema_migrations"
+SQL (3.1ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090501194952')
+SQL (2.1ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090417195107')
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090417195145')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090428151959')
+SQL (3.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090501194826')
+SQL (0.8ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  SELECT version FROM schema_migrations
+SQL (0.1ms)  select sqlite_version(*)
+SQL (0.1ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (4.0ms)  CREATE TABLE "faces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" integer, "roll_id" integer, "position" integer, "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.7ms)  CREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "name" varchar(255), "game_id" integer, "score" integer DEFAULT 0, "strategy" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.5ms)  CREATE TABLE "rolls" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "score" integer DEFAULT 0 NOT NULL, "accumulated_score" integer DEFAULT 0 NOT NULL, "unused" integer DEFAULT 0 NOT NULL, "action_name" varchar(255), "turn_id" integer, "position" integer, "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.8ms)  CREATE TABLE "turns" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "player_id" integer, "position" integer, "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.4ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (2.8ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.6ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  SELECT version FROM "schema_migrations"
+SQL (3.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090501194952')
+SQL (2.1ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090417195107')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090417195145')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090428151959')
+SQL (2.9ms)  INSERT INTO "schema_migrations" (version) VALUES ('20090501194826')
