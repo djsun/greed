@@ -1,0 +1,19 @@
+/opt/ruby-enterprise-1.8.6-20090201/bin/ruby extconf.rb
+checking for #include <iconv.h>
+... yes
+checking for #include <libxml/parser.h>
+... yes
+checking for #include <libxslt/xslt.h>
+... yes
+checking for #include <libexslt/exslt.h>
+... yes
+checking for xmlParseDoc() in -lxml2... yes
+checking for xsltParseStylesheetDoc() in -lxslt... yes
+checking for exsltFuncRegister() in -lexslt... yes
+creating Makefile
+
+make
+gcc -shared -o native.so xml_sax_parser.o xml_processing_instruction.o xml_document_fragment.o html_document.o xml_syntax_error.o xml_cdata.o xml_xpath.o xml_attr.o xml_node_set.o xml_text.o xml_node.o xml_document.o xml_comment.o xml_dtd.o xml_entity_reference.o xml_xpath_context.o native.o xml_sax_push_parser.o xml_reader.o xml_io.o xslt_stylesheet.o html_sax_parser.o html_entity_lookup.o -L. -L/opt/ruby-enterprise-1.8.6-20090201/lib -Wl,-R/opt/ruby-enterprise-1.8.6-20090201/lib -L/opt/local/lib -Wl,-R/opt/local/lib -L.  -rdynamic -Wl,-export-dynamic    -lexslt -lxslt -lxml2  -ldl -lcrypt -lm   -lc
+xml_sax_parser.o: file not recognized: File format not recognized
+collect2: ld returned 1 exit status
+make: *** [native.so] Error 1
