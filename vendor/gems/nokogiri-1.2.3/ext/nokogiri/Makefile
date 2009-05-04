@@ -4,66 +4,59 @@ SHELL = /bin/sh
 #### Start of system configuration section. ####
 
 srcdir = .
-topdir = /opt/local/lib/ruby/1.8/i686-darwin9
+topdir = /opt/ruby-enterprise-1.8.6-20090201/lib/ruby/1.8/i686-linux
 hdrdir = $(topdir)
 VPATH = $(srcdir):$(topdir):$(hdrdir)
+prefix = $(DESTDIR)/opt/ruby-enterprise-1.8.6-20090201
 exec_prefix = $(prefix)
-prefix = $(DESTDIR)/opt/local
-sharedstatedir = $(prefix)/com
-mandir = $(DESTDIR)/opt/local/share/man
-psdir = $(docdir)
-oldincludedir = $(DESTDIR)/usr/include
-localedir = $(datarootdir)/locale
-bindir = $(exec_prefix)/bin
-libexecdir = $(exec_prefix)/libexec
-sitedir = $(libdir)/ruby/site_ruby
-htmldir = $(docdir)
-vendorarchdir = $(vendorlibdir)/$(sitearch)
-includedir = $(prefix)/include
-infodir = $(datarootdir)/info
-vendorlibdir = $(vendordir)/$(ruby_version)
-sysconfdir = $(prefix)/etc
-libdir = $(exec_prefix)/lib
-sbindir = $(exec_prefix)/sbin
+sitedir = $(prefix)/lib/ruby/site_ruby
 rubylibdir = $(libdir)/ruby/$(ruby_version)
 docdir = $(datarootdir)/doc/$(PACKAGE)
 dvidir = $(docdir)
-vendordir = $(DESTDIR)/opt/local/lib/ruby/vendor_ruby
 datarootdir = $(prefix)/share
-pdfdir = $(docdir)
 archdir = $(rubylibdir)/$(arch)
-sitearchdir = $(sitelibdir)/$(sitearch)
+sbindir = $(exec_prefix)/sbin
+psdir = $(docdir)
+localedir = $(datarootdir)/locale
+htmldir = $(docdir)
 datadir = $(datarootdir)
+includedir = $(prefix)/include
+infodir = $(datarootdir)/info
+sysconfdir = $(prefix)/etc
+mandir = $(datarootdir)/man
+libdir = $(exec_prefix)/lib
+sharedstatedir = $(prefix)/com
+oldincludedir = $(DESTDIR)/usr/include
+pdfdir = $(docdir)
+sitearchdir = $(sitelibdir)/$(sitearch)
+bindir = $(exec_prefix)/bin
 localstatedir = $(prefix)/var
 sitelibdir = $(sitedir)/$(ruby_version)
+libexecdir = $(exec_prefix)/libexec
 
-CC = /usr/bin/gcc-4.0
-LIBRUBY = $(LIBRUBY_SO)
+CC = gcc
+LIBRUBY = $(LIBRUBY_A)
 LIBRUBY_A = lib$(RUBY_SO_NAME)-static.a
-LIBRUBYARG_SHARED = -l$(RUBY_SO_NAME)
+LIBRUBYARG_SHARED = -Wl,-R -Wl,$(libdir) -L$(libdir) 
 LIBRUBYARG_STATIC = -l$(RUBY_SO_NAME)-static
 
 RUBY_EXTCONF_H = 
-CFLAGS   =  -fno-common -O2  -fno-common -pipe -fno-common $(cflags)  -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline 
-INCFLAGS = -I. -I. -I/opt/local/lib/ruby/1.8/i686-darwin9 -I. -I/usr/include/libxml2
-DEFS     = 
-CPPFLAGS =  -I/opt/local/include/ -I/opt/local/include/libxml2 -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include
+CFLAGS   =  -fPIC -g -O2  -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline 
+INCFLAGS = -I. -I. -I/opt/ruby-enterprise-1.8.6-20090201/lib/ruby/1.8/i686-linux -I. -I/usr/include/libxml2
+DEFS     = -D_FILE_OFFSET_BITS=64
+CPPFLAGS =  -I/opt/local/include/ -I/opt/local/include/libxml2  -D_FILE_OFFSET_BITS=64
 CXXFLAGS = $(CFLAGS) 
-ldflags  = -L. -L/opt/local/lib
-dldflags = 
-archflag = 
-DLDFLAGS = $(ldflags) $(dldflags) $(archflag)
-LDSHARED = $(CC) -dynamic -bundle -undefined suppress -flat_namespace
+DLDFLAGS = -L.  -rdynamic -Wl,-export-dynamic  
+LDSHARED = $(CC) -shared
 AR = ar
 EXEEXT = 
 
 RUBY_INSTALL_NAME = ruby
 RUBY_SO_NAME = ruby
-arch = i686-darwin9
-sitearch = i686-darwin9
-vendorarch = i686-darwin9
+arch = i686-linux
+sitearch = i686-linux
 ruby_version = 1.8
-ruby = /opt/local/bin/ruby
+ruby = /opt/ruby-enterprise-1.8.6-20090201/bin/ruby
 RUBY = $(ruby)
 RM = rm -f
 MAKEDIRS = mkdir -p
@@ -77,7 +70,7 @@ COPY = cp
 preload = 
 
 libpath = . $(libdir) /opt/local/lib
-LIBPATH =  -L. -L$(libdir) -L/opt/local/lib
+LIBPATH =  -L. -L$(libdir) -Wl,-R$(libdir) -L/opt/local/lib -Wl,-R/opt/local/lib
 DEFFILE = 
 
 CLEANFILES = mkmf.log
@@ -87,21 +80,20 @@ extout =
 extout_prefix = 
 target_prefix = /nokogiri
 LOCAL_LIBS = 
-LIBS = $(LIBRUBYARG_SHARED) -lexslt -lxslt -lxml2  -lpthread -ldl -lobjc  
-SRCS = html_document.c html_entity_lookup.c html_sax_parser.c native.c xml_attr.c xml_cdata.c xml_comment.c xml_document.c xml_document_fragment.c xml_dtd.c xml_entity_reference.c xml_io.c xml_node.c xml_node_set.c xml_processing_instruction.c xml_reader.c xml_sax_parser.c xml_sax_push_parser.c xml_syntax_error.c xml_text.c xml_xpath.c xml_xpath_context.c xslt_stylesheet.c
-OBJS = html_document.o html_entity_lookup.o html_sax_parser.o native.o xml_attr.o xml_cdata.o xml_comment.o xml_document.o xml_document_fragment.o xml_dtd.o xml_entity_reference.o xml_io.o xml_node.o xml_node_set.o xml_processing_instruction.o xml_reader.o xml_sax_parser.o xml_sax_push_parser.o xml_syntax_error.o xml_text.o xml_xpath.o xml_xpath_context.o xslt_stylesheet.o
+LIBS =  -lexslt -lxslt -lxml2  -ldl -lcrypt -lm   -lc
+SRCS = xml_sax_parser.c xml_processing_instruction.c xml_document_fragment.c html_document.c xml_syntax_error.c xml_cdata.c xml_xpath.c xml_attr.c xml_node_set.c xml_text.c xml_node.c xml_document.c xml_comment.c xml_dtd.c xml_entity_reference.c xml_xpath_context.c native.c xml_sax_push_parser.c xml_reader.c xml_io.c xslt_stylesheet.c html_sax_parser.c html_entity_lookup.c
+OBJS = xml_sax_parser.o xml_processing_instruction.o xml_document_fragment.o html_document.o xml_syntax_error.o xml_cdata.o xml_xpath.o xml_attr.o xml_node_set.o xml_text.o xml_node.o xml_document.o xml_comment.o xml_dtd.o xml_entity_reference.o xml_xpath_context.o native.o xml_sax_push_parser.o xml_reader.o xml_io.o xslt_stylesheet.o html_sax_parser.o html_entity_lookup.o
 TARGET = native
-DLLIB = $(TARGET).bundle
+DLLIB = $(TARGET).so
 EXTSTATIC = 
 STATIC_LIB = 
 
-BINDIR        = $(bindir)
 RUBYCOMMONDIR = $(sitedir)$(target_prefix)
-RUBYLIBDIR = /Users/djsun/dev/greed/vendor/gems/nokogiri-1.2.3/lib$(target_prefix)
-RUBYARCHDIR = /Users/djsun/dev/greed/vendor/gems/nokogiri-1.2.3/lib$(target_prefix)
+RUBYLIBDIR = /home/vmoroz/railsconf/greed/vendor/gems/nokogiri-1.2.3/lib$(target_prefix)
+RUBYARCHDIR = /home/vmoroz/railsconf/greed/vendor/gems/nokogiri-1.2.3/lib$(target_prefix)
 
 TARGET_SO     = $(DLLIB)
-CLEANLIBS     = $(TARGET).bundle $(TARGET).il? $(TARGET).tds $(TARGET).map
+CLEANLIBS     = $(TARGET).so $(TARGET).il? $(TARGET).tds $(TARGET).map
 CLEANOBJS     = *.o *.a *.s[ol] *.pdb *.exp *.bak
 
 all:		$(DLLIB)
