@@ -7,7 +7,7 @@ class ComputerPlayer < Player
     @logic ||= make_strategy
   end
 
-  def some_method(roller, turn_score, action)
+  def do_roll(roller, turn_score, action)
     Roll.new(
       :faces             => roller.faces.map { |n| Face.new(:value => n) },
       :score             => roller.points,
@@ -23,15 +23,15 @@ class ComputerPlayer < Player
     loop do
       if roller.points == 0
         turn_score = 0
-        history << some_method(roller, turn_score, :bust)
+        history << do_roll(roller, turn_score, :bust)
         break
       end
       turn_score += roller.points
       if ! roll_again?
-        history << some_method(roller, turn_score, :hold)
+        history << do_roll(roller, turn_score, :hold)
         break
       end
-      history << some_method(roller, turn_score, :roll)
+      history << do_roll(roller, turn_score, :roll)
       dice_count = (roller.unused == 0) ? 5 : roller.unused
       roller.roll(dice_count)
     end
