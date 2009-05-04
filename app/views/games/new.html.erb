@@ -1,0 +1,13 @@
+<% if flash[:error] -%>
+  <div class="error_message"><%= flash[:error] %></div>
+<% end -%>
+
+<% form_for :game, :url => { :action => "create" }, :html =>  { :id => 'new_game' } do |f| %>
+  <%= f.error_messages %>
+  <div class="field">
+    <%= f.label :name, "Enter Your Name" -%>
+    <%= f.text_field "name" %>
+    <%= f.submit "Next" %>
+  </div>
+<% end -%>
+

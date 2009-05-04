@@ -1,0 +1,29 @@
+<div id="sidebar">
+  <h1><span>total points</span></h1>
+  <ul>
+    <% @game.players.each do |player| -%>
+      <%= render :partial => "player",
+            :locals => { :player => player, :current => false } -%>
+    <% end -%>
+  </ul>        
+</div>
+
+<div id="main">
+  <div id="rolls">
+    <div class="turn">
+      <h1>Your Turn</h1>
+      <% @rolls.each do |roll| -%>
+        <%= render :partial => "rolls",
+              :locals => { :player => @game.human_player, :roll => roll } -%>
+      <% end -%>
+    </div>
+  </div>
+  <p>
+    <% if @rolls.last.action == :bust -%>
+      <%= link_to "Continue", computer_turn_game_path(@game), :class => 'button' %>
+    <% else -%>
+      <%= link_to "Roll again", human_rolls_game_path(@game), :class => 'button' %>
+      <%= link_to "Hold", human_holds_game_path(@game), :class => 'button' %>
+    <% end -%>
+  </p>
+</div>

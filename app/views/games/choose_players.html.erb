@@ -1,0 +1,19 @@
+<% if flash[:error] -%>
+  <div class="error_message"><%= flash[:error] %></div>
+<% end -%>
+<% form_for :game, :url => assign_players_game_path(@game), :html => {:id => 'select_players'} do |f| %>
+  <h1>Select Your Opponent</h1>
+  <%= f.error_messages %>
+    <% @players.each do |player| -%>
+      <div class="field">
+        <label>
+          <%= radio_button_tag "player", player.to_s, false, :id => player.name %>
+          <%= player.name %>
+        </label>
+      </div>
+    <% end -%>
+  <div class="submit">
+    <%= f.submit "Play" %>
+  </div>
+<% end -%>
+

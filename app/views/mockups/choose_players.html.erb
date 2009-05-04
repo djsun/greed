@@ -1,0 +1,22 @@
+<h3>Select the players</h3>
+<% if flash[:error] -%>
+  <div class="error_message"><%= flash[:error] %></div>
+<% end -%>
+
+<% p = Struct.new(:name, :to_s) %>
+<% @players = [
+     p.new("Randy", "Randy"), 
+     p.new("Sandy", "Sandy"),
+   ] %>
+
+<% form_for :game, :url => "#" do |f| %>
+  <%= f.error_messages %>
+  <% @players.each do |player| -%>
+    <%= check_box_tag "players[]", player.to_s, false, :id => player.name %>
+    <%= label_tag player.name  %>
+  <% end -%>
+  <p>
+    <%= f.submit "Play" %>
+  </p>
+<% end -%>
+

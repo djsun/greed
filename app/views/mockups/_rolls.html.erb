@@ -1,0 +1,13 @@
+<ul class="dice">
+  <li><%= image_tag 'die1.gif' %></li>
+  <li><%= image_tag 'die2.gif' %></li>
+  <li><%= image_tag 'die3.gif' %></li>
+  <li><%= image_tag 'die4.gif' %></li>
+  <li><%= image_tag 'die5.gif' %></li>
+</ul>
+<p>Score: 500</p>
+<% if hold %>
+  <h3>Randy held</h3>
+<% else %>
+  <h3>Randy rolled again</h3>
+<% end %>

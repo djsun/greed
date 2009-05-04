@@ -1,0 +1,7 @@
+<h3>Welcome to Greed</h3>
+<% form_for :game,:url => '#' do |f| %>
+  <%= f.error_messages %>
+  <%= f.label "Your name:" -%>
+  <%= f.text_field "name" %>
+  <%= f.submit "Next" %>
+<% end -%>

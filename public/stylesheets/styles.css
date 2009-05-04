@@ -1,0 +1,251 @@
+body {
+  color: #000;
+  font-family: georgia, serif;
+  background: #eee;
+}
+
+#wrap {
+  width: 566px;
+  margin: 0 auto;
+  padding-top: 154px;
+  background: url(/images/logo.png) no-repeat 103px 66px;
+}
+
+h1 {
+  margin-bottom: 25px;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+a.button,
+input[type=submit] {
+  border: 0;
+  padding: 7px 30px;
+  color: #fff;
+  font-family: arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 0 0 #cf0000;
+  background: #cf0000;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  cursor: pointer;
+}
+
+
+#sidebar {
+  float: left;
+  width: 187px;
+  padding-top: 22px;
+}
+
+#sidebar h1 {
+  margin-bottom: 15px;
+  font-family: georgia, serif;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: normal;
+  text-align: right;
+}
+
+#sidebar h1 span {
+  border-bottom: 1px solid #cbcbcb;
+  color: #555;
+}
+
+#sidebar h2 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+#sidebar li {
+  margin-bottom: 9px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  background: url(/images/dotted_underline.png) repeat-x 0 100%;
+}
+
+#sidebar li.current_player span.player_name {
+  margin-left: -12px;
+  padding-left: 12px;
+  background: url(/images/current_player.png) no-repeat 0% 50%;
+}
+
+#sidebar span.description {
+  color: #555;
+  font-size: 12px;
+  font-style: italic;
+}
+
+#sidebar span.player_name {
+  display: block;
+  font-family: arial, sans-serif;
+  font-weight: bold;
+}
+
+#sidebar .score {
+  float: right;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+#main {
+  float: right;
+  width: 360px;
+}
+
+#main h2 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#main p.your_turn a {
+  display: block;
+  padding: 10px;
+  background: #f3f3f3;
+}
+
+#main p.your_turn a:hover {
+  background: #d9d9d9;
+}
+
+#rolls {
+  margin-bottom: 25px;
+  border: 1px solid #c3c3c3;
+  padding: 20px 20px 5px 20px;
+  background: #fff;
+  -moz-border-radius: 4px;
+}
+
+.turn {
+  margin-bottom: 20px;
+}
+
+.turn h1 {
+  margin-bottom: 12px;
+  color: #cf0000;
+  font-size: 18px;
+}
+
+.dice {
+  overflow: hidden;
+  margin-bottom: 10px;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 6px 0 5px 0;
+}
+
+.dice li {
+  float: left;
+  display: inline;
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
+}
+
+.dice li img {
+  display: block;
+}
+
+.dice li.point_earned {
+  float: right;
+  width: auto;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+p.score_for_turn {
+  margin-bottom: 20px;
+  font-family: arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+p.action {
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+
+form {
+  font-family: helvetica, arial, sans-serif;
+}
+
+label {
+  color: #333;
+  font-size: 21px;
+  font-weight: bold;
+  letter-spacing: -0.025em;
+}
+
+input {
+  font-family: arial, sans-serif;
+}
+form .field {
+  margin-bottom: 10px;
+}
+
+form .submit {
+  margin-bottom: 10px;
+}
+
+form#new_game {
+  padding: 50px 0 0 100px;
+}
+
+form#new_game label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form#new_game input[type=text] {
+  width: 295px;
+  border: 1px solid #b1b1b1;
+  padding: 12px 5px;
+  font-size: 24px;
+  background: #fff;
+}
+
+form#select_players {
+  padding: 50px 0 0 207px;
+}
+
+form#select_players .submit {
+  padding-top: 20px;
+}
+
+
+#result {
+  padding-left: 206px;
+}
+
+#result p {
+  margin-bottom: 40px;
+  font-size: 21px;
+  font-style: italic;
+}
+
+
+.error_message {
+  margin-bottom: 10px;
+  padding: 5px 0 5px 10px;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  background: #d00;
+}

@@ -1,0 +1,30 @@
+<ul class="dice">
+  <li class="point_earned"><%= roll.points %> points</li>
+  <% roll.face_values.each do |face| -%>
+    <li class="die"><%= image_tag "die#{face}.gif" %></li>
+  <% end -%>
+</ul>
+
+<p class="score_for_turn">Score for this turn so far: <%= roll.accumulated_score %></p>
+
+<p class="action">
+  <%= player.name %>
+  <%= 
+      case roll.action
+      when :hold
+        "held, earning #{roll.turn.score} for this turn"
+      when :bust
+        "went bust, no points for this turn"
+      when :roll
+        "rolled again"
+      when nil
+        if roll.accumulated_score == 0
+          "went bust, no points for this turn"
+        else
+          "is deciding..."
+        end
+      else
+        "-Unknown action #{roll.action}-"
+      end
+      -%>
+</p>

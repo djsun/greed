@@ -1,0 +1,14 @@
+<div id="sidebar">
+  <ul>
+    <%= render :partial => "players", :locals => { :player => "Randy", :current => true } -%>
+    <%= render :partial => "players", :locals => { :player => "Sandy", :current => false } -%>
+    <%= render :partial => "players", :locals => { :player => "You", :current => false } -%>
+  </ul>        
+</div>
+<div id="main">
+  <h3>Rolls</h3>
+  <% 3.times do %>
+    <%= render :partial => "rolls", :locals => { :hold => false } -%>
+  <% end %>
+  <%= render :partial => "rolls", :locals => { :hold => true } -%>
+</div>
