@@ -6,4 +6,8 @@ class Connie < GameStrategy
   def description
     "Conservative player"
   end
+
+  def roll_again?
+    false
+  end
 end
