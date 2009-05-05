@@ -7,15 +7,6 @@ class ComputerPlayer < Player
     @logic ||= make_strategy
   end
 
-  def do_roll(roller, turn_score, action)
-    Roll.new(
-      :faces             => roller.faces.map { |n| Face.new(:value => n) },
-      :score             => roller.points,
-      :unused            => roller.unused,
-      :accumulated_score => turn_score,
-      :action            => action)
-  end
-
   def take_turn
     history = []
     turn_score = 0
@@ -45,4 +36,14 @@ class ComputerPlayer < Player
   def make_strategy
     strategy.constantize.new
   end
+  
+  def do_roll(roller, turn_score, action)
+    Roll.new(
+      :faces             => roller.faces.map { |n| Face.new(:value => n) },
+      :score             => roller.points,
+      :unused            => roller.unused,
+      :accumulated_score => turn_score,
+      :action            => action)
+  end
+  
 end
